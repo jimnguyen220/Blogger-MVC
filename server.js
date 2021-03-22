@@ -12,6 +12,7 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
+//sets up sessions
 const sess = {
     secret: 'Super secret secret',
     cookie: {},
@@ -24,11 +25,15 @@ const sess = {
 
 app.use(session(sess));
 
+//Set Handlebars  as the default templating engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// body parser
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+//directory for css/js/images
 app.use(express.static("public"));
 
 app.use(routes);
