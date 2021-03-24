@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const { User } = require('../../models')
+const { User } = require('../../models');
+const { Blog } = require('../../models');
 
 //creates a new user
 router.post('/', async (req, res) => {
@@ -20,6 +21,21 @@ router.post('/', async (req, res) => {
 
     }
 });
+
+//creates a new blog post
+router.post('/blog', async (req, res) => {
+    try {
+        const dbBlogData = await Blog.create({
+            heading: req.body.heading,
+            content: req.body.content,
+        })
+        res.status(200).json(dbBlogData);
+    } catch(err) {
+        console.log(err);
+        res.status(500).json(err)
+    }
+})
+
 
 //if user is already created, login
 router.post('/login', async (req, res) => {
