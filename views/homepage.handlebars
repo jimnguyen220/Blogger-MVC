@@ -1,9 +1,33 @@
-<div class="row">
-    <h2>Dashboard</h2>
-    <!-- Displays old posts -->
 
-    {{> new-blog}}
+{{#each blogs}}
+<div class="row col-auto">
+    <h2>Welcome to {{user.username}}'s Dashboard</h2>}
 </div>
+{{/each}}
+
+<div class="row col-auto">
+    <div class="col-md-6">
+        {{> new-blog}}
+    </div>
+
+    {{#if blogs.length}}
+    <div class="col-md-6">
+        <h3>Your Post History</h3>
+
+        {{#each blogs}}
+        <div class="row blog-list">
+            <div class="col-md-8">
+                <h4><a href="/blog/{{id}}">{{heading}}</h4>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{id}}">DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
 
 
 <script src="./js/homepage.js"></script>

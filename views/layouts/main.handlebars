@@ -16,8 +16,8 @@
         <div class="container-fluid">
     <header>
       <h1>
-        <span role="img" aria-label="book"><i class="bi bi-book"></i></span>
-        <a href="/">The Daily Blogger!</a>
+        <span role="img" aria-label="book"><a href="/"><i class="bi bi-book"></i></a></span>
+        The Daily Blogger!
       </h1>
     </header>
             {{#if loggedIn}} 
@@ -25,13 +25,9 @@
             {{/if}}
         </div>
     </nav>
-    <main>
-        <aside>
-            <h2></h2>
-        </aside>
-        <div class="blog-display">
+    <main class="blog-display">
+        {{!-- renders content --}}
             {{{body}}}
-        </div>
     </main>
 
 
