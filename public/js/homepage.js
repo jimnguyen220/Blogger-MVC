@@ -63,10 +63,10 @@ document
     .querySelector('.blog-form')
     .addEventListener('submit', newBlogFormHandler);
 
-document
-    .querySelector('#btn-upd')
-    .addEventListener('click', delButtonHandler);
+// document
+//     .querySelector('#btn-upd')
+//     .addEventListener('click', delButtonHandler);
 
-document
-    .querySelector('#btn-upd')
-    .addEventListener('click', updButtonHandler);
+// document
+//     .querySelector('#btn-upd')
+//     .addEventListener('click', updButtonHandler);

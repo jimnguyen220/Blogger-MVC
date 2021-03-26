@@ -6,6 +6,7 @@ const updButtonHandler = async (event) => {
 
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
+        console.log(id)
 
         const response = await fetch(`/api/blog/${id}`, {
             method: 'PUT',
