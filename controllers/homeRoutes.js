@@ -2,6 +2,7 @@ const router = require('express').Router();
 const loginAuthenticate = require('../utils/auth');
 const { User, Blog } = require('../models');
 
+
 router.get('/', loginAuthenticate, async(req, res) => {
     //this will send the renderd Handlebars.js template from the views folder back as the response
    try {
@@ -39,9 +40,9 @@ router.get('/blog/:id', async (req, res) => {
                 }
             ],
         });
-
+        
         const blog = blogData.get({plain: true});
-        console.log(blog);
+        console.log(blog)
         res.render('blog', {
             ...blog,
             loggedIn: req.session.loggedIn
@@ -63,5 +64,12 @@ router.get('/login', (req, res) => {
 });
 
 
+router.get('/signup', (req,res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('signup');
+});
 
 module.exports = router;

@@ -1,6 +1,6 @@
 
 .login-card {
-    margin: 0 0 20px 0;
+    margin-left: 25px;
     flex: 0 0 50%;
     max-width: 50%;
     padding: 5px;
@@ -8,6 +8,7 @@
     border-radius: var(--border-radius);
     border-style: double;
     border-width: thick;
-    background-color: #577a7c;
+    background-color: rgb(188, 190, 192);
     color: var(--light);
   }
+

@@ -64,9 +64,9 @@ document
     .addEventListener('submit', newBlogFormHandler);
 
 document
-    .querySelector('.blog-list')
+    .querySelector('#btn-upd')
     .addEventListener('click', delButtonHandler);
 
 document
-    .querySelector('.blog-update')
+    .querySelector('#btn-upd')
     .addEventListener('click', updButtonHandler);
