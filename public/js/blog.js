@@ -41,9 +41,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-    .querySelector('#btn-del')
+    .getElementById('btn-del')
     .addEventListener('click', delButtonHandler);
 
 document
-    .querySelector('#btn-upd')
+    .getElementById('btn-upd')
     .addEventListener('click', updButtonHandler);
